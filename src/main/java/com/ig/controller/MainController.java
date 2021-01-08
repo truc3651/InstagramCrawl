@@ -31,14 +31,9 @@ public class MainController {
 		File file = new File(getClass().getResource(developResource).getFile());
 		String path = file.getAbsolutePath();
 		
-		
-//		String path = chromedriver..toAbsolutePath().toString();
 		System.out.println(">> path: " + path);
 		
-		
 //		open browser
-		
-		
 		System.setProperty("webdriver.chrome.driver", path);
 		WebDriver driver = new ChromeDriver();
 		
@@ -63,11 +58,11 @@ public class MainController {
 		
 //		ignore save info
 		WebElement not_now = new WebDriverWait(driver, 10)
-		        .until(ExpectedConditions.elementToBeClickable(By.cssSelector("//button[contains(text(), 'Not Now')]")));
+		        .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(), 'Not Now')]")));
 		not_now.click();
 		
 		WebElement not_now1 = new WebDriverWait(driver, 10)
-		        .until(ExpectedConditions.elementToBeClickable(By.cssSelector("//button[contains(text(), 'Not Now')]")));
+		        .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(), 'Not Now')]")));
 		not_now1.click();
 		
 //		redirect to the post want to get
