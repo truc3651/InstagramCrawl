@@ -32,6 +32,7 @@ public class MainController {
 		String path = file.getAbsolutePath();
 		
 		System.out.println(">> path: " + path);
+		System.out.println(path.substring(1));
 		
 //		open browser
 		System.setProperty("webdriver.chrome.driver", path);
