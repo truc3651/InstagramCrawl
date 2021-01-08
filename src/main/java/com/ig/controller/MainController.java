@@ -1,5 +1,8 @@
 package com.ig.controller;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,8 +26,20 @@ public class MainController {
 
 	@GetMapping("/ig-crawling/{short_code}")
 	public List<String> IgCrawling(@PathVariable("short_code")String short_code) {
+		
+		String developResource = "/develop/chromedriver.exe";
+		File file = new File(getClass().getResource(developResource).getFile());
+		String path = file.getAbsolutePath();
+		
+		
+//		String path = chromedriver..toAbsolutePath().toString();
+		System.out.println(">> path: " + path);
+		
+		
 //		open browser
-		System.setProperty("webdriver.chrome.driver", "C:\\Program Files (x86)\\chromedriver.exe");
+		
+		
+		System.setProperty("webdriver.chrome.driver", path);
 		WebDriver driver = new ChromeDriver();
 		
 //		get instagram page
