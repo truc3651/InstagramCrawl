@@ -48,6 +48,7 @@ public class MainController {
 		else
 			System.setProperty("webdriver.chrome.driver", "develop/linux/chromedriver.exe");
 		
+		
 		WebDriver driver = new ChromeDriver();
 		
 //		get instagram page
