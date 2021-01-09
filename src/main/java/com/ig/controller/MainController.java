@@ -45,8 +45,8 @@ public class MainController {
 		
 		if(os.contains("windows"))
 			System.setProperty("webdriver.chrome.driver", "develop/chrome/chromedriver.exe");
-		else
-			System.setProperty("webdriver.chrome.driver", "develop/chromedriver");
+		else if (os.contains("linux"))
+			System.setProperty("webdriver.chrome.driver", "target/classes/develop/chromedriver.exe");
 		
 		
 		WebDriver driver = new ChromeDriver();
