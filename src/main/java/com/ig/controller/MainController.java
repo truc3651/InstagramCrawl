@@ -41,10 +41,12 @@ public class MainController {
 			@PathVariable("short_code")String short_code) 
 			throws JsonMappingException, JsonProcessingException {
 		
+		System.out.println(">> os: " + os);
+		
 		if(os.contains("windows"))
 			System.setProperty("webdriver.chrome.driver", "develop/chrome/chromedriver.exe");
 		else
-			System.setProperty("webdriver.chrome.driver", "/home/dev3/dev3-document/truc/InstagramCrawl/develop/linux/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "develop/linux/chromedriver");
 		
 		WebDriver driver = new ChromeDriver();
 		
